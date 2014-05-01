@@ -14,6 +14,7 @@ XSERVER = "xserver-xorg \
 PREFERRED_PROVIDER_virtual/kernel = "linux-rockchip-3.0"
 
 KERNEL_IMAGETYPE = "Image"
+ROCKCHIP_BOOTLOADER_IMAGE ?= "RK3188Loader\(L\)_V2.13"
 IMAGE_CLASSES += "rockchip-update-img"
 IMAGE_FSTYPES += "rockchip-update-img"
 

@@ -9,11 +9,9 @@ SRCREV_pn-${PN} = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-LOADER = "RK3188Loader(L)_V2.13.bin"
-
 inherit deploy
 
 do_install() {
     install -d ${DEPLOY_DIR_IMAGE}
-    install "${S}/${LOADER}" ${DEPLOY_DIR_IMAGE}/loader.bin
+    install ${S}/${ROCKCHIP_BOOTLOADER_IMAGE}.bin ${DEPLOY_DIR_IMAGE}/bootloader.bin
 }
