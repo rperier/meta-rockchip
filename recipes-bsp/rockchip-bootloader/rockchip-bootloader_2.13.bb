@@ -11,7 +11,12 @@ S = "${WORKDIR}/git"
 
 inherit deploy
 
-do_install() {
-    install -d ${DEPLOY_DIR_IMAGE}
-    install ${S}/${ROCKCHIP_BOOTLOADER_IMAGE}.bin ${DEPLOY_DIR_IMAGE}/bootloader.bin
+do_deploy() {
+    install -d ${DEPLOYDIR}
+    install ${S}/${ROCKCHIP_BOOTLOADER_IMAGE}.bin ${DEPLOYDIR}/bootloader.bin
 }
+
+addtask deploy after do_install
+do_package[noexec] = "1"
+do_package_ipk[noexec] = "1"
+do_package_write_ipk[noexec] = "1"
